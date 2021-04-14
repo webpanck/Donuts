@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/webpanck/Donuts/issues"
   },
-  "homepage": "https://github.com/webpanck/Donuts#readme"
+  "homepage": "https://github.com/webpanck/Donuts#readme",
+  "dependencies": {
+    "vue": "^2.6.12"
+  }
 }
