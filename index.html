@@ -35,10 +35,13 @@
 </head>
 <body>
 <div id="app">
-    <d-button icon="settings">
+    <d-button :loading="loading1" @click="loading1 = !loading1">
         按钮
     </d-button>
-    <d-button icon="settings" icon-position="right">
+    <d-button icon="settings" :loading="loading2" @click="loading2 = !loading2">
+        按钮
+    </d-button>
+    <d-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">
         按钮
     </d-button>
     <d-icon name="download"></d-icon>
