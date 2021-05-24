@@ -5,7 +5,16 @@
 </template>
 
 <script>
-
+  export default {
+    mounted() {
+      for (let node of this.$el.children) {
+        let name = node.nodeName.toLowerCase()
+        if (name !== 'button') {
+          console.warn(`d-button-group 的子元素必须为 d-button，当前子元素为 ${name}`)
+        }
+      }
+    }
+  }
 </script>
 
 <style lang="scss">
