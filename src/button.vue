@@ -10,7 +10,11 @@
 </template>
 
 <script>
+  import Icon from './icon'
   export default {
+    components: {
+      'd-icon': Icon
+    },
     //props: ['icon', 'iconPosition']
     props: {
       icon: {},
