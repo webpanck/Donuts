@@ -1,8 +1,8 @@
 {
-  "name": "donuts",
-  "version": "0.0.1",
+  "name": "donuts_panck",
+  "version": "0.0.2",
   "description": "这是一个UI框架",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel app.js",
