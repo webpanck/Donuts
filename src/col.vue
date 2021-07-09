@@ -37,10 +37,6 @@
         type: Object,
         validator
       },
-      pc: {
-        type: Object,
-        validator
-      },
       widePc: {
         type: Object,
         validator
@@ -53,15 +49,14 @@
     },
     computed: {
       colClass() {
-        let {span, offset, phone, pad, narrowPc, pc, widePc} = this
+        let {span, offset, phone, pad, narrowPc, widePc} = this
         return [
           span && `col-${span}`,
           offset && `offset-${offset}`,
           ... (phone ? [`col-phone-${phone.span}`] : []),
           ... (pad ? [`col-pad-${pad.span}`] : []),
           ... (narrowPc ? [`col-narrowPc-${narrowPc.span}`] : []),
-          ... (pc ? [`col-pc-${pc.span}`] : []),
-          ... (widePc ? [`col-widePc-${widePc.span}`] : []),
+          ... (widePc ? [`col-widePc-${widePc.span}`] : [])
         ]
       },
       colStyle() {
@@ -125,20 +120,6 @@
         }
       }
       $class-prefix: offset-narrow-pc-;
-      @for $n from 1 through 24 {
-        &.#{$class-prefix}#{$n} {
-          margin-left: ($n / 24) * 100%;
-        }
-      }
-    }
-    @media (min-width: 993px) and (max-width: 1200px) {
-      $class-prefix: col-pc-;
-      @for $n from 1 through 24 {
-        &.#{$class-prefix}#{$n} {
-          width: ($n / 24) * 100%;
-        }
-      }
-      $class-prefix: offset-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
           margin-left: ($n / 24) * 100%;
