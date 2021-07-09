@@ -44,27 +44,16 @@
 <div id="app">
     <div style="border: 1px solid black">
         <d-row gutter="20">
-            <d-col></d-col>
-            <d-col></d-col>
+            <d-col span="2" :phone="{span:12}">a</d-col>
+            <d-col span="20" offset="2" :phone="{span:12, offset:0}">a</d-col>
         </d-row>
         <d-row gutter="20">
-            <d-col></d-col>
-            <d-col></d-col>
-            <d-col></d-col>
+            <d-col span="2">b</d-col>
+            <d-col span="22">b</d-col>
         </d-row>
         <d-row>
-            <d-col></d-col>
-            <d-col></d-col>
-            <d-col></d-col>
-            <d-col></d-col>
-        </d-row>
-        <d-row gutter="20">
-            <d-col span="2"></d-col>
-            <d-col span="22"></d-col>
-        </d-row>
-        <d-row>
-            <d-col span="4"></d-col>
-            <d-col span="18" offset="2"></d-col>
+            <d-col span="4">c</d-col>
+            <d-col span="18" offset="2">c</d-col>
         </d-row>
     </div>
 
