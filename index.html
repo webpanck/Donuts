@@ -41,21 +41,34 @@
     </style>
 </head>
 <body>
+<style>
+    .demo {
+        background: #ddd;
+        border: 1px solid #666;
+        height: 100px;
+    }
+</style>
 <div id="app">
-    <div style="border: 1px solid black">
-        <d-row gutter="20">
-            <d-col span="2" :phone="{span:12}">a</d-col>
-            <d-col span="20" offset="2" :phone="{span:12, offset:0}">a</d-col>
-        </d-row>
-        <d-row gutter="20">
-            <d-col span="2">b</d-col>
-            <d-col span="22">b</d-col>
-        </d-row>
-        <d-row>
-            <d-col span="4">c</d-col>
-            <d-col span="18" offset="2">c</d-col>
-        </d-row>
-    </div>
+    <d-row>
+        <d-col span="24" :pad="{span:12}" :narrow-pc="{span:8}">
+            <div class="demo"></div>
+        </d-col>
+        <d-col span="24" :pad="{span:12}" :narrow-pc="{span:8}">
+            <div class="demo"></div>
+        </d-col>
+        <d-col span="24" :pad="{span:12}" :narrow-pc="{span:8}">
+            <div class="demo"></div>
+        </d-col>
+        <d-col span="24" :pad="{span:12}" :narrow-pc="{span:8}">
+            <div class="demo"></div>
+        </d-col>
+        <d-col span="24" :pad="{span:12}" :narrow-pc="{span:8}">
+            <div class="demo"></div>
+        </d-col>
+        <d-col span="24" :pad="{span:12}" :narrow-pc="{span:8}">
+            <div class="demo"></div>
+        </d-col>
+    </d-row>
 
     <hr>
 
