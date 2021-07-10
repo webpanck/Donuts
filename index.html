@@ -41,15 +41,27 @@
             border: 1px solid #666;
             min-height: 100px;
         }
+        .sider {
+            background: #333;
+            width: 200px;
+        }
+        .header {
+            background: #999;
+            height: 100px;
+        }
+        .footer {
+            background: #ccc;
+            height: 50px;
+        }
     </style>
 
     <div id="app">
         <d-layout style="height: 100vh">
-            <d-sider class="demo">sider</d-sider>
+            <d-sider>sider</d-sider>
             <d-layout>
-                <d-header class="demo">header</d-header>
-                <d-content class="demo">content</d-content>
-                <d-footer class="demo">footer</d-footer>
+                <d-header>header</d-header>
+                <d-content>content</d-content>
+                <d-footer>footer</d-footer>
             </d-layout>
         </d-layout>
     </div>
