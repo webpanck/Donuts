@@ -19,44 +19,41 @@
   export default {
     name: 'DonutsCol',
     props: {
-      span: {
-        type: [Number, String]
-      },
-      offset: {
-        type: [Number, String]
-      },
-      pad: {
-        type: Object,
-        validator
-      },
-      narrowPc: {
-        type: Object,
-        validator
-      },
-      pc: {
-        type: Object,
-        validator
-      },
-      widePc: {
-        type: Object,
-        validator
-      }
+      span: {type: [Number, String]},
+      offset: {type: [Number, String]},
+      pad: {type: Object, validator},
+      narrowPc: {type: Object, validator},
+      pc: {type: Object, validator},
+      widePc: {type: Object, validator}
     },
     data() {
       return {
         gutter: 0
       }
     },
+    methods: {
+      createClasses(obj, str = '') {
+        if(!obj) {return []}
+        let array = []
+        if(obj.span) {
+          array.push(`col-${str}${obj.span}`)
+        }
+        if(obj.offset) {
+          array.push(`offset-${str}${obj.offset}`)
+        }
+        return array
+      }
+    },
     computed: {
       colClass() {
         let {span, offset, pad, narrowPc, pc, widePc} = this
+        let createClasses = this.createClasses
         return [
-          span && `col-${span}`,
-          offset && `offset-${offset}`,
-          ... (pad ? [`col-pad-${pad.span}`] : []),
-          ... (pc ? [`col-pc-${pc.span}`] : []),
-          ... (narrowPc ? [`col-narrowPc-${narrowPc.span}`] : []),
-          ... (widePc ? [`col-widePc-${widePc.span}`] : [])
+            ...createClasses({span, offset}),
+            ...createClasses(pad, 'pad-'),
+            ...createClasses(narrowPc, 'narrow-pc-'),
+            ...createClasses(pc, 'pc-'),
+            ...createClasses(widePc, 'wide-pc-')
         ]
       },
       colStyle() {
@@ -99,13 +96,13 @@
       }
     }
     @media (min-width: 769px) {
-      $class-prefix: col-narrowPc-;
+      $class-prefix: col-narrow-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
           width: ($n / 24) * 100%;
         }
       }
-      $class-prefix: offset-narrowPc-;
+      $class-prefix: offset-narrow-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
           margin-left: ($n / 24) * 100%;
@@ -127,13 +124,13 @@
       }
     }
     @media (min-width: 1201px) {
-      $class-prefix: col-widePc-;
+      $class-prefix: col-wide-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
           width: ($n / 24) * 100%;
         }
       }
-      $class-prefix: offset-widePc-;
+      $class-prefix: offset-wide-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
           margin-left: ($n / 24) * 100%;
