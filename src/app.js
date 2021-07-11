@@ -39,8 +39,17 @@ new Vue({
     },
     methods: {
         showToast() {
-            this.$toast('We are toast!', {
-                enableHtml: true
+            this.$toast('你的钱包需要充值！', {
+                enableHtml: true,
+                position: 'middle',
+                closeButton: {
+                    text: '已充值',
+                    callback() {
+                        console.log('他说已经充值智商了');
+                    }
+                },
+                autoClose: false,
+                autoCloseDelay: 3
             })
         }
     }
