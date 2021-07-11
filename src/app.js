@@ -39,7 +39,9 @@ new Vue({
     },
     methods: {
         showToast() {
-            this.$toast('We are toast!')
+            this.$toast('We are toast!', {
+                enableHtml: true
+            })
         }
     }
 })
