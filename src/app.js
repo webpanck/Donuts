@@ -10,6 +10,8 @@ import Header from './header'
 import Sider from './sider'
 import Content from './content'
 import Footer from './footer'
+import Toast from './toast'
+import plugin from './plugin';
 
 Vue.component('d-button', Button)
 Vue.component('d-icon', Icon)
@@ -22,6 +24,8 @@ Vue.component('d-header', Header)
 Vue.component('d-sider', Sider)
 Vue.component('d-content', Content)
 Vue.component('d-footer', Footer)
+Vue.component('d-toast', Toast)
+Vue.use(plugin)
 
 new Vue({
     el: '#app',
@@ -31,9 +35,11 @@ new Vue({
         loading3: false,
         message: '大潘'
     },
+    created() {
+    },
     methods: {
-        inputChange(e) {
-            console.log(e.target.value)
+        showToast() {
+            this.$toast('We are toast!')
         }
     }
 })
