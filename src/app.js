@@ -41,7 +41,7 @@ new Vue({
         showToast() {
             this.$toast('你的钱包需要充值！', {
                 enableHtml: true,
-                position: 'middle',
+                position: 'bottom',
                 closeButton: {
                     text: '已充值',
                     callback() {
