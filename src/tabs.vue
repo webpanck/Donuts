@@ -32,8 +32,16 @@
       }
     },
     mounted() {
-      // this.$emit('update:selected', '')
-      this.eventBus.$emit('update:selected', this.selected)
+      this.$children.forEach((vm) => {
+        if(vm.$options.name === 'DonutsTabsHead') {
+          vm.$children.forEach((childVm) => {
+            if(childVm.$options.name === 'DonutsTabsItem'
+              && childVm.name === this.selected) {
+              this.eventBus.$emit('update:selected', this.selected, childVm)
+            }
+          })
+        }
+      })
     }
   }
 </script>
