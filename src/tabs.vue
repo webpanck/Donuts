@@ -32,6 +32,10 @@
       }
     },
     mounted() {
+      if(this.$children.length === 0) {
+        console && console.warn &&
+        console.warn('tabs 的子组件只能是 tabs-head 和 tabs-bod，但你没有写子组件')
+      }
       this.$children.forEach((vm) => {
         if(vm.$options.name === 'DonutsTabsHead') {
           vm.$children.forEach((childVm) => {
