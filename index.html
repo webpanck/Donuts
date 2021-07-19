@@ -37,18 +37,20 @@
 </head>
 <body>
     <div id="app" style="padding-top: 100px; padding-left: 100px;">
-        <d-popover>
-            <template slot="content">
-                <div>popover内容</div>
-            </template>
-            <button>点我</button>
-        </d-popover>
-        <d-popover>
-            <template slot="content">
-                <div>popover内容</div>
-            </template>
-            <button>点我</button>
-        </d-popover>
+        <div style="overflow: hidden; border: 1px solid green; padding: 5px">
+            <d-popover>
+                <template slot="content">
+                    <div>popover内容</div>
+                </template>
+                <button>点我</button>
+            </d-popover>
+            <d-popover>
+                <template slot="content">
+                    <div>popover内容</div>
+                </template>
+                <button>点我</button>
+            </d-popover>
+        </div>
     </div>
 
     <script src="./src/app.js"></script>
