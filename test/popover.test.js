@@ -9,7 +9,7 @@ describe('Popover', () => {
     it('存在.', () => {
         expect(Popover).to.exist
     })
-    it('可以设置position.', (done) => {
+    it('可以设置position', (done) => {
         Vue.component('d-popover', Popover)
         const div = document.createElement('div')
         document.body.appendChild(div)
@@ -31,16 +31,27 @@ describe('Popover', () => {
             done()
         })
     })
-    // it('可以设置position.', () => {
-    //     const Constructor = Vue.extend(Popover)
-    //     const vm = new Constructor({
-    //         propsData: {
-    //             position: 'bottom'
-    //         }
-    //     }).$mount()
-    //     const useElement = vm.$el.querySelector('use')
-    //     expect(useElement.getAttribute('xlink:href')).to.equal('#i-settings')
-    //     vm.$destroy()
-    // })
-
+    xit('可以设置trigger', (done) => {
+        Vue.component('d-popover', Popover)
+        const div = document.createElement('div')
+        document.body.appendChild(div)
+        div.innerHTML = `
+            <d-popover trigger="hover" ref="a">
+                <template slot="content">
+                    popover内容
+                </template>
+                <button>点我</button>
+            </d-popover>
+        `
+        const vm = new Vue({
+            el: div
+        })
+        let event = new Event('mouseenter')
+        vm.$el.dispatchEvent(event)
+        vm.$nextTick(() => {
+            const {contentWrapper} = vm.$refs.a.$refs
+            expect(contentWrapper).to.exist
+            done()
+        })
+    })
 })
