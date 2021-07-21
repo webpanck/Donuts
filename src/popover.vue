@@ -42,7 +42,7 @@ export default {
       this.$refs.popover.addEventListener('mouseleave', this.close)
     }
   },
-  destroyed() {
+  beforeDestroy() {
     if(this.trigger === 'click') {
       this.$refs.popover.removeEventListener('click', this.onClick)
     } else {
@@ -58,20 +58,20 @@ export default {
       const {height: height2} = contentWrapper.getBoundingClientRect()
       let positions = {
         top: {
-          top: top + window.screenY,
-          left: left + window.screenX
+          top: top + window.scrollY,
+          left: left + window.scrollX
         },
         bottom: {
-          top: top + height + window.screenY,
-          left:left + window.screenX
+          top: top + height + window.scrollY,
+          left:left + window.scrollX
         },
         left: {
-          top: top + window.screenY + (height-height2)/2,
-          left: left + window.screenX
+          top: top + window.scrollY + (height-height2)/2,
+          left: left + window.scrollX
         },
         right: {
-          top: top + window.screenY + (height-height2)/2,
-          left: left + window.screenX + width
+          top: top + window.scrollY + (height-height2)/2,
+          left: left + window.scrollX + width
         }
       }
       contentWrapper.style.left = positions[this.position].left + 'px'
