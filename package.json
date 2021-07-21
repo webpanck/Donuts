@@ -5,11 +5,12 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "parcel index.html --no-cache",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
     "dev": "parcel app.js",
     "build": "parcel build app.js",
     "dev-test": "parcel watch test/* --no-cache & karma start",
-    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,8 @@
   "homepage": "https://github.com/webpanck/Donuts#readme",
   "dependencies": {
     "vue": "^2.6.12",
-    "vue-hot-reload-api": "^2.3.4"
+    "vue-hot-reload-api": "^2.3.4",
+    "vue-server-renderer": "^2.6.12"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.2.0",
@@ -40,11 +42,14 @@
     "karma-mocha": "^2.0.1",
     "karma-sinon-chai": "^2.0.2",
     "mocha": "^8.4.0",
+    "node-sass": "^6.0.1",
     "parcel-bundler": "^1.12.5",
     "sass": "^1.32.8",
+    "sass-loader": "^10.1.1",
     "sinon": "^11.0.0",
     "sinon-chai": "^3.6.0",
-    "vue-template-compiler": "^2.6.12"
+    "vue-template-compiler": "^2.6.12",
+    "vuepress": "^1.8.2"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"
