@@ -5,11 +5,7 @@
     <d-button :loading="true">默认按钮</d-button>
     <d-button disabled>默认按钮</d-button>
 
-    <pre>
-      <code>
-        {{content}}
-      </code>
-    </pre>
+    <pre><code>{{content}}</code></pre>
   </div>
 </template>
 
@@ -26,7 +22,7 @@
           <d-button icon="settings">默认按钮</d-button>
           <d-button :loading="true">默认按钮</d-button>
           <d-button disabled>默认按钮</d-button>
-        `
+        `.replace(/\t+| +/g, '').trim()
       }
     }
   }
