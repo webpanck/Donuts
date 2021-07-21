@@ -45,25 +45,7 @@ Vue.component('d-collapse-item', CollapseItem)
 
 new Vue({
     el: '#app',
-    data: {
-        selectedTab: ['1', '2']
-    },
-    created() {
-    },
-    methods: {
-        showToast() {
-            this.$toast('你的钱包需要充值！', {
-                enableHtml: true,
-                position: 'bottom',
-                closeButton: {
-                    text: '已充值',
-                    callback() {
-                        console.log('他说已经充值智商了');
-                    }
-                },
-            })
-        }
-    }
+    
 })
 
 
